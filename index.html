@@ -12,19 +12,44 @@
 	</head>
 
 	<body ng-controller="KittiesController as vm">
-		<header>Angular Kitty App</header>
+		<h1>Angular Kitty App</h1>
 
-		<ul class="kittens">
-			<li class="kitten" ng-repeat="kitten in vm.allKittens">
-				<span>{{kitten.catName}}</span>
-			</li>
-		</ul>
 
-    <!--Sourcing Angular-->
+		<div class="left-container">
+			<div>
+			 <h1>Kittens For Adoption</h1>
 
-		<!-- Source in module -->
+		 		<div class="dashed" ng-repeat="kitten in vm.allKittens | filter:{adopted:false}">
+					<ul>
+						<li> My name is {{kitten.catName}} </li>
+						<li> I am {{kitten.monthsOld}} months old </li>
+						<li> I am a {{kitten.gender}}</li>
+						<li ng-src="kitten.image"> <img src="{{kitten.image}}"></li>
+						<li> Adopt? <input type="checkbox" ng-click="kitten.adopted = !kitten.adopted">{{kitten.adopted}}</input></li>
+					</ul>
+				</div>
 
-		<!-- Source in controller -->
+			</div>
+		</div>
+
+
+
+<div class="right-container">
+	<div>
+	<h1>Kittens Adopted</h1>
+ 		<div class="dashed" ng-repeat="kitten in vm.allKittens | filter:{adopted:true}">
+			<ul>
+				<li> My name is {{kitten.catName}} </li>
+				<li> I am {{kitten.monthsOld}} months old </li>
+				<li> I am a {{kitten.gender}}</li>
+				<li ng-src="kitten.image"> <img src="{{kitten.image}}"></li>
+				<li> Adopt? <input type="checkbox" checked ng-click="kitten.adopted = !kitten.adopted">{{kitten.adopted}}</input></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+
 
 	</body>
 </html>

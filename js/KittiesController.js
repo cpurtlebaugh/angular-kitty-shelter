@@ -32,7 +32,7 @@ function KittiesController() {
 			monthsOld: 2,
 			gender: 'boy',
 			image: "images/oscar.png",
-			adopted: false
+			adopted: true
 		},
 		{
 			catName: 'Princess Mew',

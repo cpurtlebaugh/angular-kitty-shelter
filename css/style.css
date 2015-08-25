@@ -1,7 +1,11 @@
 /*@import a Google Font here!*/
 
 body {
+  background-image: url("/images/background.png")
+}
 
+ul {
+  list-style: none;
 }
 
 #container {
@@ -9,12 +13,22 @@ body {
 }
 
 .dashed {
-
+  border-style: dashed;
 }
 
-.left-container, .right-container {
-
+.left-container {
+  float: left;
+  padding-left: 20%;
+  background-color: white;
 }
+
+.right-container {
+  float: right;
+  padding-right: 20%;
+  background-color: white;
+}
+
 h1 {
-	
+  font-size: 20px;
+  text-align: center;
 }
