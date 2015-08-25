@@ -1,4 +1,18 @@
-[
+(function(){
+	'use strict';
+
+angular
+	.module("kittenApp")
+	.controller('KittiesController', KittiesController);
+
+KittiesController.$inject = [];
+
+function KittiesController() {
+
+	var vm = this;
+
+	vm.allKittens =
+	[
 		{
 			catName: 'Karl',
 			monthsOld: 5,
@@ -28,4 +42,8 @@
 			adopted: false
 		}
 
-	]
+	];
+
+}
+
+})();
