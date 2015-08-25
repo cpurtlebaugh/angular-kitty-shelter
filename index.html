@@ -12,30 +12,38 @@
 	</head>
 
 	<body ng-controller="KittiesController as vm">
+
 		<h1>Angular Kitty App</h1>
 
+	<form>
+		<ul>
+			<li><input type="text" placeholder="name"></li>
+			<li><input type="text" placeholder="how many months old?"></li>
+			<li><input type="text" placeholder="img url"></li>
+			<li><input type="radio">Male</li>
+			<li><input type="radio">Female</li>
+		</ul>
+	</form>
 
 		<div class="left-container">
-			<div>
-			 <h1>Kittens For Adoption</h1>
+		 <h1>Kittens For Adoption</h1>
 
-		 		<div class="dashed" ng-repeat="kitten in vm.allKittens | filter:{adopted:false}">
-					<ul>
-						<li> My name is {{kitten.catName}} </li>
-						<li> I am {{kitten.monthsOld}} months old </li>
-						<li> I am a {{kitten.gender}}</li>
-						<li ng-src="kitten.image"> <img src="{{kitten.image}}"></li>
-						<li> Adopt? <input type="checkbox" ng-click="kitten.adopted = !kitten.adopted">{{kitten.adopted}}</input></li>
-					</ul>
-				</div>
-
+	 		<div class="dashed" ng-repeat="kitten in vm.allKittens | filter:{adopted:false}">
+				<ul>
+					<li> My name is {{kitten.catName}} </li>
+					<li> I am {{kitten.monthsOld}} months old </li>
+					<li> I am a {{kitten.gender}}</li>
+					<li ng-src="kitten.image"> <img src="{{kitten.image}}"></li>
+					<li> Adopt? <input type="checkbox" ng-click="kitten.adopted = !kitten.adopted"></input></li>
+					<li><button ng-click="vm.removeKittens">Delete</button></li>
+				</ul>
 			</div>
 		</div>
 
 
 
+
 <div class="right-container">
-	<div>
 	<h1>Kittens Adopted</h1>
  		<div class="dashed" ng-repeat="kitten in vm.allKittens | filter:{adopted:true}">
 			<ul>
@@ -43,10 +51,9 @@
 				<li> I am {{kitten.monthsOld}} months old </li>
 				<li> I am a {{kitten.gender}}</li>
 				<li ng-src="kitten.image"> <img src="{{kitten.image}}"></li>
-				<li> Adopt? <input type="checkbox" checked ng-click="kitten.adopted = !kitten.adopted">{{kitten.adopted}}</input></li>
+				<li> Adopted <input type="checkbox" checked ng-click="kitten.adopted = !kitten.adopted"></input></li>
 			</ul>
 		</div>
-	</div>
 </div>
 
 

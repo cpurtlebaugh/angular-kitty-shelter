@@ -14,6 +14,7 @@ function KittiesController() {
 	vm.allKittens =
 	[
 		{
+			id: 0,
 			catName: 'Karl',
 			monthsOld: 5,
 			gender: 'boy',
@@ -21,6 +22,7 @@ function KittiesController() {
 			adopted: true,
 		},
 		{
+			id: 1,
 			catName: 'Jack',
 			monthsOld: 4,
 			gender: 'boy',
@@ -28,6 +30,7 @@ function KittiesController() {
 			adopted: false
 		},
 		{
+			id: 2,
 			catName: 'Oscar',
 			monthsOld: 2,
 			gender: 'boy',
@@ -35,6 +38,7 @@ function KittiesController() {
 			adopted: true
 		},
 		{
+			id: 3,
 			catName: 'Princess Mew',
 			monthsOld: 3,
 			gender: 'girl',
@@ -43,6 +47,27 @@ function KittiesController() {
 		}
 
 	];
+
+	// vm.newKitten = {id: 0, catName: '', monthsOld: '', gender'', image: '', adopted: false};
+
+	// vm.add = function(){
+	// 	this.allKittens.push({
+	// 		id: 		 this.id,
+	// 		catName: this.catName,
+	// 		monthsOld: this.monthsOld,
+	// 		gender: this.gender,
+	// 		image: this.image,
+	// 		adopted: this.adopted
+	// 	)};
+	// 	this.ids++;
+	// 	this.newKitten.task = '';
+	// };
+
+	vm.remove = function(removeKittens){
+		this.allKittens = this.allKittens.filter(function(kitten){
+			return kitten.id != removeKittens.id;
+		});
+	};
 
 }
 
